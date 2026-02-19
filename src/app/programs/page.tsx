@@ -24,7 +24,7 @@ export default function ProgramsPage() {
             {programs.map((program) => (
               <div key={program.slug} className="rounded-2xl border border-white/10 bg-white/5 p-8">
                 <p className="text-xs uppercase tracking-[0.3em] text-white/60">
-                  {program.type} · {program.status}
+                  {program.type} Â· {program.status}
                 </p>
                 <h2 className="mt-3 text-2xl">{program.title}</h2>
                 <p className="mt-3 text-white/70">{program.description}</p>

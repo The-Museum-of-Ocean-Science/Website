@@ -38,7 +38,7 @@ export default function OceanRiskDetail({ params }: { params: { slug: string } }
             <h3 className="text-xl">Data Sources</h3>
             <ul className="space-y-2 text-white/70">
               {snapshot.dataSources.map((source) => (
-                <li key={source}>ï {source}</li>
+                <li key={source}>‚Ä¢ {source}</li>
               ))}
             </ul>
           </div>
@@ -46,7 +46,7 @@ export default function OceanRiskDetail({ params }: { params: { slug: string } }
             <h2 className="text-2xl">Deliverables</h2>
             <ul className="space-y-2 text-white/70">
               {snapshot.deliverables.map((item) => (
-                <li key={item}>ï {item}</li>
+                <li key={item}>‚Ä¢ {item}</li>
               ))}
             </ul>
             <a
@@ -56,7 +56,7 @@ export default function OceanRiskDetail({ params }: { params: { slug: string } }
               Download PDF
             </a>
             {snapshot.testimonial && (
-              <div className="text-sm text-white/60">ì{snapshot.testimonial}î</div>
+              <div className="text-sm text-white/60">‚Äú{snapshot.testimonial}‚Äù</div>
             )}
           </div>
         </div>
