@@ -1,26 +1,99 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --mos-ocean: #0b3c5d;
+  --mos-seafoam: #2ec4b6;
+  --mos-offwhite: #f5f7f6;
+  --mos-charcoal: #1c1c1c;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), ui-sans-serif, system-ui;
+  background-color: #000;
+  color: #f5f7f6;
+  letter-spacing: 0.01em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), ui-serif, Georgia;
+  letter-spacing: 0.02em;
+}
+
+.font-accent {
+  font-family: var(--font-accent), ui-serif, Georgia !important;
+}
+
+.font-display {
+  font-family: var(--font-display), ui-serif, Georgia !important;
+}
+
+.logo-right-edge-fade {
+  filter: drop-shadow(6px 0 14px rgba(0, 0, 0, 0.4));
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 82%,
+    rgba(0, 0, 0, 0.72) 90%,
+    rgba(0, 0, 0, 0.3) 96%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 82%,
+    rgba(0, 0, 0, 0.72) 90%,
+    rgba(0, 0, 0, 0.3) 96%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+::selection {
+  background: rgba(46, 196, 182, 0.35);
+}
+
+.hero-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(46, 196, 182, 0.25), transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(11, 60, 93, 0.45), transparent 50%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.hero-fade::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 55% 30%, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2) 55%, rgba(0, 0, 0, 0.7) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.35) 60%, rgba(0, 0, 0, 0.8) 100%);
+  pointer-events: none;
+}
+
+.section-divider {
+  border-top: none;
+}
+
+.stars-surface {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(1px);
+}
+
+.stars-overlay {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.35)),
+    url("/assets/stars-bg.jpg");
+  background-size: cover;
+  background-position: center;
 }
