@@ -30,14 +30,14 @@ export default function HomePage() {
         <div
           className="absolute inset-x-0 top-0 -bottom-96 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/assets/stars-bg.jpg')",
+            backgroundImage: "url('/assets/stars-bg-opt.webp')",
             transform: `translateY(${-offset * 0.2}px)`,
           }}
         />
         <div
           className="absolute inset-x-0 top-0 -bottom-96 bg-cover"
           style={{
-            backgroundImage: "url('/assets/jellyfish-hero.png')",
+            backgroundImage: "url('/assets/jellyfish-hero-opt.webp')",
             backgroundPosition: "center -170px",
             transform: `translateY(${offset * 0.01}px)`,
             WebkitMaskImage:
@@ -49,7 +49,7 @@ export default function HomePage() {
         <div
           className="absolute inset-x-0 top-0 -bottom-96 opacity-40 mix-blend-screen"
           style={{
-            backgroundImage: "url('/assets/stars-bg.jpg')",
+            backgroundImage: "url('/assets/stars-bg-opt.webp')",
             backgroundSize: "cover",
             transform: `translateY(${-offset * 0.25}px)`,
           }}
@@ -135,7 +135,7 @@ export default function HomePage() {
                                           <div className="hidden md:block md:mt-2">
                 <div className="relative h-[500px] w-full max-w-lg overflow-hidden rounded-xl">
                   <Image
-                    src="/assets/focus-areas-jellyfish.png"
+                    src="/assets/focus-areas-jellyfish-opt.webp"
                     alt="Jellyfish visual for Focus Areas"
                     fill
                     className="object-cover"
@@ -247,6 +247,7 @@ export default function HomePage() {
     </div>
   );
 }
+
 
 
 
