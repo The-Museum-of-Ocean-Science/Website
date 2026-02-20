@@ -1,5 +1,6 @@
-"use client";
+﻿"use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -131,20 +132,17 @@ export default function HomePage() {
               </p>
             </div>
             <div className="relative grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,520px)] md:items-start">
-              <div className="hidden md:block md:mt-2">
-                <div
-                  aria-label="Ocean research visual"
-                  className="h-[500px] w-full max-w-lg rounded-xl"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 18%, rgba(0,0,0,0) 76%, rgba(0,0,0,0.9) 90%, rgba(0,0,0,1) 100%), linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 16%, rgba(0,0,0,0) 84%, rgba(0,0,0,1) 100%), url('/assets/jellyfish-hero.png')",
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "100% 100%, 100% 100%, 260% 100%",
-                    backgroundPosition: "center, center, right center",
-                  }}
-                />
-              </div>
-              <div
+                            <div className="hidden md:block md:mt-2">
+                <div className="relative h-[500px] w-full max-w-lg overflow-hidden rounded-xl border border-white/10">
+                  <Image
+                    src="/assets/focus-areas-jellyfish.png"
+                    alt="Jellyfish visual for Focus Areas"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 768px) 520px, 0px"
+                  />
+                </div>
+              </div>              <div
                 className="relative z-10 ml-auto mt-12 w-full max-w-xl space-y-8 md:mt-16"
                 style={{ transform: `translateY(${-offset * 0.03}px)` }}
               >
@@ -242,3 +240,6 @@ export default function HomePage() {
     </div>
   );
 }
+
+
+
