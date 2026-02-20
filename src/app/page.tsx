@@ -145,7 +145,7 @@ export default function HomePage() {
                     className="pointer-events-none absolute inset-0"
                     style={{
                       backgroundImage:
-                        "linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.55) 14%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,0.55) 86%, rgba(0,0,0,0.95) 100%), linear-gradient(to bottom, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.55) 12%, rgba(0,0,0,0) 28%, rgba(0,0,0,0) 72%, rgba(0,0,0,0.55) 88%, rgba(0,0,0,0.95) 100%)",
+                        "linear-gradient(to right, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0.1) 8%, rgba(0,0,0,0) 18%, rgba(0,0,0,0) 82%, rgba(0,0,0,0.1) 92%, rgba(0,0,0,0.22) 100%), linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.09) 8%, rgba(0,0,0,0) 18%, rgba(0,0,0,0) 82%, rgba(0,0,0,0.09) 92%, rgba(0,0,0,0.2) 100%)",
                     }}
                   />
                 </div>
@@ -247,6 +247,7 @@ export default function HomePage() {
     </div>
   );
 }
+
 
 
 
