@@ -1,19 +1,28 @@
-﻿import Image from "next/image";
+import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import { affiliates, projects } from "@/lib/content";
+import { buildPageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return affiliates.map((affiliate) => ({ slug: affiliate.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const affiliate = affiliates.find((item) => item.slug === params.slug);
   if (!affiliate) return {};
-  return {
-    title: `${affiliate.name} | MOS Affiliates`,
-    description: affiliate.bio,
-  };
+
+  const cleanBio = affiliate.bio.replace(/\s+/g, " ").trim();
+  const description = cleanBio.length > 160 ? `${cleanBio.slice(0, 157)}...` : cleanBio;
+
+  return buildPageMetadata({
+    title: affiliate.name,
+    description,
+    path: `/affiliates/${affiliate.slug}`,
+    image: affiliate.headshot,
+    type: "article",
+  });
 }
 
 export default function AffiliateDetail({ params }: { params: { slug: string } }) {

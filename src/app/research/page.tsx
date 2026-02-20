@@ -1,9 +1,13 @@
-﻿import ResearchGrid from "./research-grid";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Research | Museum of Ocean Science",
+import { buildPageMetadata } from "@/lib/seo";
+import ResearchGrid from "./research-grid";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Research",
   description: "Open research, contract work, and exhibits from MOS.",
-};
+  path: "/research",
+});
 
 export default function ResearchPage() {
   return (

@@ -1,11 +1,14 @@
-﻿import Link from "next/link";
+import type { Metadata } from "next";
+import Link from "next/link";
 
 import { oceanRiskSnapshots } from "@/lib/content";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Ocean Risk Snapshot | Museum of Ocean Science",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Ocean Risk Snapshot",
   description: "Rapid consulting case studies and ocean risk intelligence.",
-};
+  path: "/ocean-risk",
+});
 
 export default function OceanRiskPage() {
   const sample = oceanRiskSnapshots[0];

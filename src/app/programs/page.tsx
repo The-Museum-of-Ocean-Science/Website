@@ -1,9 +1,13 @@
-import { programs } from "@/lib/content";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Programs | Museum of Ocean Science",
+import { programs } from "@/lib/content";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Programs",
   description: "Future-facing programs and micro-labs from MOS.",
-};
+  path: "/programs",
+});
 
 export default function ProgramsPage() {
   return (

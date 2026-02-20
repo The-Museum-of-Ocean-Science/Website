@@ -1,18 +1,23 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { oceanRiskSnapshots } from "@/lib/content";
+import { buildPageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return oceanRiskSnapshots.map((snapshot) => ({ slug: snapshot.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const snapshot = oceanRiskSnapshots.find((item) => item.slug === params.slug);
   if (!snapshot) return {};
-  return {
-    title: `${snapshot.title} | Ocean Risk Snapshot`,
+
+  return buildPageMetadata({
+    title: snapshot.title,
     description: snapshot.summary,
-  };
+    path: `/ocean-risk/${snapshot.slug}`,
+    type: "article",
+  });
 }
 
 export default function OceanRiskDetail({ params }: { params: { slug: string } }) {

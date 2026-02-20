@@ -1,7 +1,12 @@
-﻿export const metadata = {
-  title: "Contact | Museum of Ocean Science",
+import type { Metadata } from "next";
+
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Contact",
   description: "Contact the Museum of Ocean Science.",
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

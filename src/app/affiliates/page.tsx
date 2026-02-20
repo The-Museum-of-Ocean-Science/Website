@@ -1,9 +1,13 @@
-﻿import AffiliatesGrid from "./affiliates-grid";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Affiliates | Museum of Ocean Science",
+import { buildPageMetadata } from "@/lib/seo";
+import AffiliatesGrid from "./affiliates-grid";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Affiliates",
   description: "Research affiliates and project leads at MOS.",
-};
+  path: "/affiliates",
+});
 
 export default function AffiliatesPage() {
   return (

@@ -1,7 +1,12 @@
-export const metadata = {
-  title: "Support MOS | Museum of Ocean Science",
+import type { Metadata } from "next";
+
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Support MOS",
   description: "Fund open ocean science and transparency at MOS.",
-};
+  path: "/support",
+});
 
 export default function SupportPage() {
   return (

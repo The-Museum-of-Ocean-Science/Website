@@ -1,19 +1,25 @@
-﻿import Image from "next/image";
+import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import { affiliates, projects } from "@/lib/content";
+import { buildPageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const project = projects.find((item) => item.slug === params.slug);
   if (!project) return {};
-  return {
-    title: `${project.title} | MOS Research`,
+
+  return buildPageMetadata({
+    title: project.title,
     description: project.summary,
-  };
+    path: `/research/${project.slug}`,
+    image: project.featuredImage,
+    type: "article",
+  });
 }
 
 export default function ResearchDetail({ params }: { params: { slug: string } }) {

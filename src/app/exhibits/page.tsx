@@ -1,11 +1,14 @@
-﻿import Image from "next/image";
+import type { Metadata } from "next";
+import Image from "next/image";
 
 import { exhibits } from "@/lib/content";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Exhibits | Museum of Ocean Science",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Exhibits",
   description: "Art-meets-science exhibits and data installations.",
-};
+  path: "/exhibits",
+});
 
 export default function ExhibitsPage() {
   return (
