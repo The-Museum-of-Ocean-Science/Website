@@ -132,8 +132,8 @@ export default function HomePage() {
               </p>
             </div>
             <div className="relative grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,520px)] md:items-start">
-                            <div className="hidden md:block md:mt-2">
-                <div className="relative h-[500px] w-full max-w-lg overflow-hidden rounded-xl border border-white/10">
+                                          <div className="hidden md:block md:mt-2">
+                <div className="relative h-[500px] w-full max-w-lg overflow-hidden rounded-xl">
                   <Image
                     src="/assets/focus-areas-jellyfish.png"
                     alt="Jellyfish visual for Focus Areas"
@@ -141,8 +141,15 @@ export default function HomePage() {
                     className="object-cover"
                     sizes="(min-width: 768px) 520px, 0px"
                   />
+                  <div
+                    className="pointer-events-none absolute inset-0"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.55) 14%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,0.55) 86%, rgba(0,0,0,0.95) 100%), linear-gradient(to bottom, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.55) 12%, rgba(0,0,0,0) 28%, rgba(0,0,0,0) 72%, rgba(0,0,0,0.55) 88%, rgba(0,0,0,0.95) 100%)",
+                    }}
+                  />
                 </div>
-              </div>              <div
+              </div><div
                 className="relative z-10 ml-auto mt-12 w-full max-w-xl space-y-8 md:mt-16"
                 style={{ transform: `translateY(${-offset * 0.03}px)` }}
               >
@@ -240,6 +247,7 @@ export default function HomePage() {
     </div>
   );
 }
+
 
 
 
