@@ -78,12 +78,18 @@ export default function HomePage() {
             >
               Data. Depth. Discovery.
             </p>
-            <div className="mt-10 flex justify-center">
+            <div className="mt-10 flex flex-col items-center gap-4">
               <Link
                 href="/research"
                 className="rounded-full border border-white/25 bg-black/25 px-8 py-3 text-sm uppercase tracking-[0.4em] text-white/95 drop-shadow-[0_1px_1px_rgba(0,0,0,0.7)] transition hover:border-white hover:text-white"
               >
                 Explore Research
+              </Link>
+              <Link
+                href="/exhibits"
+                className="rounded-full border border-white/25 bg-black/25 px-8 py-3 text-sm uppercase tracking-[0.4em] text-white/95 drop-shadow-[0_1px_1px_rgba(0,0,0,0.7)] transition hover:border-white hover:text-white"
+              >
+                Explore Exhibits
               </Link>
             </div>
             <div className="mt-6 flex flex-col items-center gap-3">
