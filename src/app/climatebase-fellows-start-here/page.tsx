@@ -10,16 +10,60 @@ export const metadata: Metadata = buildPageMetadata({
 });
 
 const faqQuestions = [
-  "What is the Museum of Ocean Science (MOS)?",
-  "What is expected of ClimateBase Fellows during this fellowship?",
-  "How many hours per week should I plan to contribute?",
-  "What kinds of projects can I join at MOS?",
-  "How are fellows matched to project teams?",
-  "What tools and platforms does MOS use for collaboration?",
-  "How should I document methods, sources, and decisions in my work?",
-  "Who reviews fellow deliverables before publication or release?",
-  "How often does the team meet, and are meetings required?",
-  "What does successful completion of this fellowship look like?",
+  {
+    question: "What can I expect during the cohort?",
+    expandable: {
+      intro:
+        "We aim to keep our documentation as transparent as possible, but this is a work in progress.",
+      linkLeadText: "Feel free to check out the",
+      linkLabel: "planning documents",
+      linkHref:
+        "https://docs.google.com/document/d/18NrWtPUjs_SNdZr687aBT7UWqx31YO3S9-PdqKLm8pQ/edit?tab=t.0#heading=h.oaav9hopg4q6",
+      benefits: [],
+      closing: "that our leadership team has put together so far.",
+      linkOnNewParagraph: true,
+    },
+  },
+  {
+    question: "I'm interested! How can I get started?",
+    expandable: {
+      intro: "Join our",
+      linkLabel: "Slack Channel",
+      linkHref: "https://museumofoceanscience.slack.com",
+      benefits: [],
+      closing: "and send a message to Janelle letting her know you're interested!",
+    },
+  },
+  {
+    question: "What are the benefits of participating in this capstone?",
+    expandable: {
+      intro: "Affiliates in good standing who complete qualifying artifacts may receive:",
+      benefits: [
+        {
+          label: "Official Title for the term (can use on resume or Linkedin)",
+          subitems: [
+            "Research Affiliate",
+            "Senior Research Affiliate",
+            "Project Lead / Project Manager",
+            "Functional designation or title",
+          ],
+        },
+        {
+          label: "Museum email address for duration of term",
+          subitems: ["name@museumofoceanscience.com"],
+        },
+        { label: "Public profile listed on museumofoceanscience.com" },
+        {
+          label:
+            "Letter of recommendation with MOS header, confirming affiliation and contribution",
+        },
+        { label: "Eligibility for consideration in contract-funded projects" },
+        { label: "Educational and Mentorship opportunities" },
+      ],
+      closing:
+        "These benefits are contingent upon artifact completion and adherence to standards.",
+    },
+  },
 ];
 
 export default function ClimateBaseFellowsStartHerePage() {
@@ -30,8 +74,9 @@ export default function ClimateBaseFellowsStartHerePage() {
           <p className="text-xs uppercase tracking-[0.4em] text-white/60">ClimateBase Fellows</p>
           <h1 className="mt-4 text-4xl">Start Here</h1>
           <p className="mt-4 max-w-3xl text-white/70">
-            Welcome. This page is your launch point for joining MOS projects, understanding
-            expectations, and getting set up quickly.
+            Welcome! We&apos;re so glad you&apos;d like to join us, and invite you to explore what has
+            already been worked on. Please keep in mind that this is a work-in-progress, and that
+            we hope to continue updating this page with questions and answers as they arise.
           </p>
         </div>
       </section>
@@ -40,18 +85,93 @@ export default function ClimateBaseFellowsStartHerePage() {
         <div className="mx-auto w-full max-w-5xl px-6 py-12">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
             <h2 className="text-2xl">Frequently Asked Questions</h2>
-            <p className="mt-3 text-white/70">
-              Start with these core questions as you onboard into ClimateBase fellowship work at
-              MOS.
-            </p>
             <ol className="mt-8 space-y-4 text-white/80">
               {faqQuestions.map((question, index) => (
                 <li
-                  key={question}
+                  key={question.question}
                   className="rounded-xl border border-white/10 bg-black/30 px-5 py-4"
                 >
-                  <span className="mr-3 text-white/45">{String(index + 1).padStart(2, "0")}.</span>
-                  <span>{question}</span>
+                  <div className="flex items-start gap-3">
+                    <span className="pt-[1px] text-white/45">{String(index + 1).padStart(2, "0")}.</span>
+                    {question.expandable ? (
+                      <details className="flex-1">
+                        <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                          <span className="underline decoration-white/25 underline-offset-4 transition hover:text-[color:var(--mos-seafoam)] hover:decoration-[color:var(--mos-seafoam)]">
+                            {question.question}
+                          </span>
+                        </summary>
+                        <div className="mt-4 space-y-4 text-sm text-white/75">
+                          {question.expandable.linkHref ? (
+                            question.expandable.linkOnNewParagraph ? (
+                              <>
+                                {question.expandable.intro ? <p>{question.expandable.intro}</p> : null}
+                                <p>
+                                  {question.expandable.linkLeadText
+                                    ? `${question.expandable.linkLeadText} `
+                                    : null}
+                                  <a
+                                    href={question.expandable.linkHref}
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                    className="underline decoration-white/25 underline-offset-4 transition hover:text-[color:var(--mos-seafoam)] hover:decoration-[color:var(--mos-seafoam)]"
+                                  >
+                                    {question.expandable.linkLabel}
+                                  </a>
+                                  {question.expandable.closing ? ` ${question.expandable.closing}` : null}
+                                </p>
+                              </>
+                            ) : (
+                              <p>
+                                {question.expandable.intro ? `${question.expandable.intro} ` : null}
+                                <a
+                                  href={question.expandable.linkHref}
+                                  target="_blank"
+                                  rel="noreferrer noopener"
+                                  className="underline decoration-white/25 underline-offset-4 transition hover:text-[color:var(--mos-seafoam)] hover:decoration-[color:var(--mos-seafoam)]"
+                                >
+                                  {question.expandable.linkLabel}
+                                </a>
+                                {question.expandable.closing ? ` ${question.expandable.closing}` : null}
+                              </p>
+                            )
+                          ) : null}
+                          {!question.expandable.linkHref && question.expandable.intro ? (
+                            <p>{question.expandable.intro}</p>
+                          ) : null}
+                          {question.expandable.benefits.length ? (
+                            <ul className="list-disc space-y-2 pl-5">
+                              {question.expandable.benefits.map((benefit) => (
+                                <li key={benefit.label}>
+                                  {benefit.label}
+                                  {benefit.subitems?.length ? (
+                                    <ul className="mt-2 list-disc space-y-1 pl-5">
+                                      {benefit.subitems.map((subitem) => (
+                                        <li key={subitem}>{subitem}</li>
+                                      ))}
+                                    </ul>
+                                  ) : null}
+                                </li>
+                              ))}
+                            </ul>
+                          ) : null}
+                          {!question.expandable.linkHref && question.expandable.closing ? (
+                            <p>{question.expandable.closing}</p>
+                          ) : null}
+                        </div>
+                      </details>
+                    ) : question.href ? (
+                      <a
+                        href={question.href}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="underline decoration-white/25 underline-offset-4 transition hover:text-[color:var(--mos-seafoam)] hover:decoration-[color:var(--mos-seafoam)]"
+                      >
+                        {question.question}
+                      </a>
+                    ) : (
+                      <span>{question.question}</span>
+                    )}
+                  </div>
                 </li>
               ))}
             </ol>
