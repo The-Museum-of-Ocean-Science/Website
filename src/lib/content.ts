@@ -268,6 +268,7 @@ export const navigation = [
   { label: "Research", href: "/research" },
   { label: "Exhibits", href: "/exhibits" },
   { label: "Research Affiliates", href: "/affiliates" },
+  { label: "ClimateBase Fellows Start Here", href: "/climatebase-fellows-start-here" },
   { label: "Support", href: "/support" },
   { label: "Contact", href: "/contact" },
   { label: "Ocean Risk Snapshot (Coming Soon)", href: "/ocean-risk", disabled: true },

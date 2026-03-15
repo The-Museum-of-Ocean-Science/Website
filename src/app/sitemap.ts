@@ -13,6 +13,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/exhibits`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/programs`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/ocean-risk`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    {
+      url: `${SITE_URL}/climatebase-fellows-start-here`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
     { url: `${SITE_URL}/support`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE_URL}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
   ];
