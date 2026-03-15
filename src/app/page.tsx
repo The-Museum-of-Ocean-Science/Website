@@ -80,16 +80,15 @@ export default function HomePage() {
             </p>
             <div className="mt-10 flex flex-col items-center gap-4">
               <Link
-                href="/research"
-                className="rounded-full border border-white/25 bg-black/25 px-8 py-3 text-sm uppercase tracking-[0.4em] text-white/95 drop-shadow-[0_1px_1px_rgba(0,0,0,0.7)] transition hover:border-white hover:text-white"
+                href="/climatebase-fellows-start-here"
+                className="rounded-full border border-white/25 bg-black/25 px-8 py-3 text-center leading-tight text-white/95 drop-shadow-[0_1px_1px_rgba(0,0,0,0.7)] transition hover:border-white hover:text-white"
               >
-                Explore Research
-              </Link>
-              <Link
-                href="/exhibits"
-                className="rounded-full border border-white/25 bg-black/25 px-8 py-3 text-sm uppercase tracking-[0.4em] text-white/95 drop-shadow-[0_1px_1px_rgba(0,0,0,0.7)] transition hover:border-white hover:text-white"
-              >
-                Explore Exhibits
+                <span className="block text-[11px] uppercase tracking-[0.34em] text-white/75">
+                  ClimateBase Fellows
+                </span>
+                <span className="mt-1 block text-base font-semibold uppercase tracking-[0.26em] text-[color:var(--mos-seafoam)]">
+                  Start Here
+                </span>
               </Link>
             </div>
             <div className="mt-6 flex flex-col items-center gap-3">
@@ -253,7 +252,6 @@ export default function HomePage() {
     </div>
   );
 }
-
 
 
 

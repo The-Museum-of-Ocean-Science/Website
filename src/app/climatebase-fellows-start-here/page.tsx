@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -9,6 +8,19 @@ export const metadata: Metadata = buildPageMetadata({
     "Orientation and next steps for ClimateBase Fellows collaborating with the Museum of Ocean Science.",
   path: "/climatebase-fellows-start-here",
 });
+
+const faqQuestions = [
+  "What is the Museum of Ocean Science (MOS)?",
+  "What is expected of ClimateBase Fellows during this fellowship?",
+  "How many hours per week should I plan to contribute?",
+  "What kinds of projects can I join at MOS?",
+  "How are fellows matched to project teams?",
+  "What tools and platforms does MOS use for collaboration?",
+  "How should I document methods, sources, and decisions in my work?",
+  "Who reviews fellow deliverables before publication or release?",
+  "How often does the team meet, and are meetings required?",
+  "What does successful completion of this fellowship look like?",
+];
 
 export default function ClimateBaseFellowsStartHerePage() {
   return (
@@ -25,43 +37,24 @@ export default function ClimateBaseFellowsStartHerePage() {
       </section>
 
       <section className="section-divider mt-10">
-        <div className="mx-auto grid w-full max-w-5xl gap-8 px-6 py-12 md:grid-cols-2">
-          <div className="space-y-4 rounded-2xl border border-white/10 bg-white/5 p-8">
-            <h2 className="text-2xl">Week 1 Checklist</h2>
-            <ul className="space-y-2 text-white/70">
-              <li>1. Review the current MOS research tracks and focus areas.</li>
-              <li>2. Confirm your preferred contribution area with the team.</li>
-              <li>3. Read the methods brief for your assigned project.</li>
-              <li>4. Join your team channel and introduction thread.</li>
-            </ul>
-          </div>
-
-          <div className="space-y-4 rounded-2xl border border-white/10 bg-white/5 p-8">
-            <h2 className="text-2xl">How Fellows Contribute</h2>
-            <ul className="space-y-2 text-white/70">
-              <li>1. Open-data analysis and documentation support.</li>
-              <li>2. Visual communication and exhibit development.</li>
-              <li>3. Research synthesis and citation quality review.</li>
-              <li>4. Structured feedback during project milestones.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-divider">
         <div className="mx-auto w-full max-w-5xl px-6 py-12">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
-            <h2 className="text-2xl">Need Help?</h2>
-            <p className="mt-3 max-w-2xl text-white/70">
-              If you are unsure where to begin, use the contact form and mention that you are a
-              ClimateBase Fellow so we can route your message to the right lead.
+            <h2 className="text-2xl">Frequently Asked Questions</h2>
+            <p className="mt-3 text-white/70">
+              Start with these core questions as you onboard into ClimateBase fellowship work at
+              MOS.
             </p>
-            <Link
-              href="/contact"
-              className="mt-6 inline-flex rounded-full border border-white/30 px-6 py-3 text-xs uppercase tracking-[0.3em] text-white"
-            >
-              Contact MOS
-            </Link>
+            <ol className="mt-8 space-y-4 text-white/80">
+              {faqQuestions.map((question, index) => (
+                <li
+                  key={question}
+                  className="rounded-xl border border-white/10 bg-black/30 px-5 py-4"
+                >
+                  <span className="mr-3 text-white/45">{String(index + 1).padStart(2, "0")}.</span>
+                  <span>{question}</span>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
       </section>
