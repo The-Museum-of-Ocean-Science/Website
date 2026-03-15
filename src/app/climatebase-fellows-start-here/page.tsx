@@ -9,7 +9,28 @@ export const metadata: Metadata = buildPageMetadata({
   path: "/climatebase-fellows-start-here",
 });
 
-const faqQuestions = [
+type FaqBenefit = {
+  label: string;
+  subitems?: string[];
+};
+
+type FaqExpandable = {
+  intro?: string;
+  linkLeadText?: string;
+  linkLabel?: string;
+  linkHref?: string;
+  benefits: FaqBenefit[];
+  closing?: string;
+  linkOnNewParagraph?: boolean;
+};
+
+type FaqQuestion = {
+  question: string;
+  href?: string;
+  expandable?: FaqExpandable;
+};
+
+const faqQuestions: FaqQuestion[] = [
   {
     question: "What can I expect during the cohort?",
     expandable: {
