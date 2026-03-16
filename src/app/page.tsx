@@ -116,24 +116,34 @@ export default function HomePage() {
               >
                 About MOS
               </p>
-              <h2 className="text-3xl text-white">Open Source Research & Creative Ocean Data Lab</h2>
+              <h2 className="text-3xl text-white">The Ocean Data Accessibility Problem</h2>
               <p className="text-white/70">
-                The Museum of Ocean Science (MOS) is an independent ocean and climate research
-                organization focused on open-data analysis, coastal intelligence, and public-facing
-                scientific work.
+                The ocean is changing quickly, but most people cannot easily access or understand
+                the science that explains what is happening.
               </p>
               <p className="text-white/70">
-                We design and execute structured research projects using satellite and
-                environmental datasets, produce clear climate risk briefings for coastal
-                communities and businesses, and develop visually compelling reports that translate
-                complex ocean data into accessible knowledge.
+                Huge amounts of ocean and climate data are publicly available. Scientists collect
+                satellite observations, field measurements, and ecological data every day. However,
+                much of this information lives inside technical datasets, academic journals, or
+                institutional research environments that are difficult for most people to access or
+                interpret.
               </p>
               <p className="text-white/70">
-                MOS brings together scientists, analysts, and designers to collaborate on
-                rigorous, well-documented projects with defined standards and measurable outputs.
+                At the same time, much of the work people do while exploring science never becomes
+                visible. Scientists, communicators, educators, artists, and other collaborators
+                often spend months analyzing datasets, building visualizations, testing ideas, or
+                writing explanations that never turn into a formal publication. When that happens,
+                the work often disappears. Contributors receive little recognition, and there is
+                often no clear way to document the work they have done.
               </p>
               <p className="text-white/70">
-                Our work emphasizes clarity, transparency, and reproducibility.
+                As a result, valuable analyses, communication projects, and exploratory research
+                often remain scattered, informal, or invisible.
+              </p>
+              <p className="text-white/70">
+                There is a major gap between available ocean data, public curiosity about the
+                ocean, and the people capable of turning scientific knowledge into accessible
+                public understanding.
               </p>
             </div>
             <div className="relative grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,520px)] md:items-start">
@@ -162,43 +172,29 @@ export default function HomePage() {
                   className="font-display text-base text-[color:var(--mos-seafoam)]"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  Focus Areas
+                  The MOS Research Model
                 </p>
+                <h3 className="text-2xl text-white">A New Model for Ocean Science Communication</h3>
                 <div className="space-y-6 text-white/70">
-                  <div>
-                    <p className="font-display text-lg text-white" style={{ fontFamily: "var(--font-display)" }}>
-                      Ocean Data Analysis
-                    </p>
-                    <p className="mt-2 text-base text-white/65">
-                      Applied analysis of open source datasets to quantify marine heat stress,
-                      coastal change, and ecosystem trends.
-                    </p>
-                  </div>
-                  <div>
-                    <p className="font-display text-lg text-white" style={{ fontFamily: "var(--font-display)" }}>
-                      Data-Driven Visual Communication
-                    </p>
-                    <p className="mt-2 text-base text-white/65">
-                      Reproducible research translated into visual exhibits, data-driven
-                      illustrations, and structured public-facing design.
-                    </p>
-                  </div>
-                  <div>
-                    <p className="font-display text-lg text-white" style={{ fontFamily: "var(--font-display)" }}>
-                      Public Research Artifacts
-                    </p>
-                    <p className="mt-2 text-base text-white/65">
-                      Standards-driven reports and visualizations built with documented methods, transparent sourcing, and accessible presentation..
-                    </p>
-                  </div>
-                  <div>
-                    <p className="font-display text-lg text-white" style={{ fontFamily: "var(--font-display)" }}>
-                      Collaborative Guided Research Development
-                    </p>
-                    <p className="mt-2 text-base text-white/65">
-                      Structured, mentorship-based collaborations which allow early-career scientists to gain experience while contributing to meaningfully to the field. 
-                    </p>
-                  </div>
+                  <p>
+                    The Museum of Ocean Science (MOS) is an independent ocean and climate research
+                    organization focused on open-data analysis, coastal intelligence, and
+                    public-facing scientific work.
+                  </p>
+                  <p>
+                    We design and execute structured research projects using satellite and
+                    environmental datasets, produce clear climate risk briefings for coastal
+                    communities and businesses, and develop visually compelling reports that
+                    translate complex ocean data into accessible knowledge.
+                  </p>
+                  <p>
+                    MOS brings together scientists, analysts, and designers to collaborate on
+                    rigorous, well-documented projects with defined standards and measurable
+                    outputs.
+                  </p>
+                  <p>
+                    Our work emphasizes clarity, transparency, and reproducibility.
+                  </p>
                 </div>
               </div>
             </div>
@@ -252,8 +248,6 @@ export default function HomePage() {
     </div>
   );
 }
-
-
 
 
 
