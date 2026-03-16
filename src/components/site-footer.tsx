@@ -17,11 +17,17 @@ export default function SiteFooter() {
         <div className="space-y-2">
           <div className="text-xs uppercase tracking-[0.3em] text-white/50">Navigate</div>
           <div className="flex flex-col gap-2">
-            {navigation.map((item) => (
-              <Link key={item.href} href={item.href} className="hover:text-white">
-                {item.label}
-              </Link>
-            ))}
+            {navigation.map((item) =>
+              item.disabled ? (
+                <span key={item.href} className="cursor-not-allowed text-white/40" aria-disabled>
+                  {item.label}
+                </span>
+              ) : (
+                <Link key={item.href} href={item.href} className="hover:text-white">
+                  {item.label}
+                </Link>
+              )
+            )}
           </div>
         </div>
         <div className="space-y-3">

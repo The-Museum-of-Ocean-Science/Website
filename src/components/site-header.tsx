@@ -8,6 +8,7 @@ import { navigation } from "@/lib/content";
 
 function renderLabel(label: string, disabled?: boolean) {
   if (!disabled) return label;
+  if (!label.includes("(Coming Soon)")) return label;
   const cleaned = label.replace(" (Coming Soon)", "");
   return (
     <span className="flex flex-col items-end leading-tight">
