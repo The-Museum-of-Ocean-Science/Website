@@ -27,8 +27,15 @@ export default function SiteFooter() {
         <div className="space-y-3">
           <div className="text-xs uppercase tracking-[0.3em] text-white/50">Contact</div>
           <div className="space-y-2 text-white/70">
-            <p className="text-xs uppercase tracking-[0.3em] text-white/50">Email</p>
-            <p className="text-sm">info@museumofoceansience.com</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-white/50">Slack</p>
+            <a
+              href="https://museumofoceanscience.slack.com"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-sm underline decoration-white/25 underline-offset-4 transition hover:text-[color:var(--mos-seafoam)] hover:decoration-[color:var(--mos-seafoam)]"
+            >
+              Slack Channel
+            </a>
             <p className="pt-2 text-xs uppercase tracking-[0.3em] text-white/50">Location</p>
             <p className="text-sm">Global</p>
           </div>
