@@ -85,6 +85,16 @@ const faqQuestions: FaqQuestion[] = [
         "These benefits are contingent upon artifact completion and adherence to standards.",
     },
   },
+  {
+    question: "What is your stance on using AI to complete projects?",
+    expandable: {
+      intro:
+        "Transparency is a core value for our team, including when it comes to AI. This website was built with AI assistance, and AI tools are used throughout program operations. The bigger accountability questions sit with the companies developing these tools, but that doesn't make using AI uncomplicated.",
+      benefits: [],
+      closing:
+        "In a nutshell, MOS is pro-AI but anti-slop. Rather than avoiding AI outright, we are choosing to maintain a clear-eyed sense of when it actually helps and when it undermines your credibility or craft. That question sits at the heart of good science communication, and it's one Research Affiliates are encouraged to bring into their own work and to MOS.",
+    },
+  },
 ];
 
 export default function ClimateBaseFellowsStartHerePage() {
