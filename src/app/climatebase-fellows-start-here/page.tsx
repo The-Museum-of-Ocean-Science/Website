@@ -39,6 +39,7 @@ type FaqExpandable = {
   linkLeadText?: string;
   linkLabel?: string;
   linkHref?: string;
+  secondaryLeadText?: string;
   secondaryLinkLabel?: string;
   secondaryLinkHref?: string;
   secondaryClosing?: string;
@@ -58,7 +59,7 @@ const gettingStartedSteps: FaqStep[] = [
     label: "Join our Slack Channel to explore and ask questions.",
     href: "https://museumofoceanscience.slack.com",
     linkLabel: "Join our Slack Channel",
-    postLinkText: " to explore and ask questions.",
+    postLinkText: " to explore and ask questions. Anyone is welcome, even if you're just curious.",
   },
   {
     label: "Decide how you'd like to participate.",
@@ -95,13 +96,18 @@ const faqQuestions: FaqQuestion[] = [
     question: "What can I expect during the cohort?",
     expandable: {
       intro:
-        "We aim to keep our documentation as transparent as possible, but this is a work in progress.",
+        "We're still actively working on this documentation, but you're welcome to see what we've put together so far.",
       linkLeadText: "Feel free to check out the",
       linkLabel: "planning documents",
       linkHref:
         "https://docs.google.com/document/d/18NrWtPUjs_SNdZr687aBT7UWqx31YO3S9-PdqKLm8pQ/edit?tab=t.0#heading=h.oaav9hopg4q6",
       benefits: [],
-      closing: "that our leadership team has put together so far.",
+      closing: ", which will remain publicly at least through the end of the cohort.",
+      secondaryLeadText:
+        "However, if you can't find what you're looking for, we really encourage you to join the",
+      secondaryLinkLabel: "Slack Channel",
+      secondaryLinkHref: "https://museumofoceanscience.slack.com",
+      secondaryClosing: "and ask someone on the team!",
       linkOnNewParagraph: true,
     },
   },
@@ -165,7 +171,7 @@ export default function ClimateBaseFellowsStartHerePage() {
               {gettingStartedSteps.map((step, stepIndex) => (
                 <div key={step.label}>
                   <p>
-                    <span className="font-medium text-white">{`Step ${stepIndex + 1}: `}</span>
+                    <span className="font-semibold text-white">{`Step ${stepIndex + 1}: `}</span>
                     {step.href ? (
                       <>
                         <a
@@ -287,8 +293,8 @@ export default function ClimateBaseFellowsStartHerePage() {
                           {question.expandable.linkHref ? (
                             question.expandable.linkOnNewParagraph ? (
                               <>
-                                {question.expandable.intro ? <p>{question.expandable.intro}</p> : null}
                                 <p>
+                                  {question.expandable.intro ? `${question.expandable.intro} ` : null}
                                   {question.expandable.linkLeadText
                                     ? `${question.expandable.linkLeadText} `
                                     : null}
@@ -302,6 +308,24 @@ export default function ClimateBaseFellowsStartHerePage() {
                                   </a>
                                   {question.expandable.closing ? ` ${question.expandable.closing}` : null}
                                 </p>
+                                {question.expandable.secondaryLeadText &&
+                                question.expandable.secondaryLinkHref &&
+                                question.expandable.secondaryLinkLabel ? (
+                                  <p>
+                                    {question.expandable.secondaryLeadText}{" "}
+                                    <a
+                                      href={question.expandable.secondaryLinkHref}
+                                      target="_blank"
+                                      rel="noreferrer noopener"
+                                      className="underline decoration-white/25 underline-offset-4 transition hover:text-[color:var(--mos-seafoam)] hover:decoration-[color:var(--mos-seafoam)]"
+                                    >
+                                      {question.expandable.secondaryLinkLabel}
+                                    </a>
+                                    {question.expandable.secondaryClosing
+                                      ? ` ${question.expandable.secondaryClosing}`
+                                      : null}
+                                  </p>
+                                ) : null}
                               </>
                             ) : (
                               <p>
