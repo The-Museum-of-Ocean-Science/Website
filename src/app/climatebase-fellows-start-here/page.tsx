@@ -136,21 +136,6 @@ const faqQuestions: FaqQuestion[] = [
     },
   },
   {
-    question:
-      "I'm more interested in a leadership position than helping with research or exhibit design. Where can I find more about that?",
-    expandable: {
-      intro: "Sweet! Check out the",
-      linkLabel: "open positions.",
-      linkHref: "https://museumofoceanscience.com/affiliates",
-      closing:
-        "If you see something that you're interested in, or would like to propose a role, please join our",
-      secondaryLinkLabel: "Slack Channel",
-      secondaryLinkHref: "https://museumofoceanscience.slack.com",
-      secondaryClosing: "and message Janelle.",
-      benefits: [],
-    },
-  },
-  {
     question: "What is your stance on using AI to complete projects?",
     expandable: {
       intro:
