@@ -14,6 +14,26 @@ type FaqBenefit = {
   subitems?: string[];
 };
 
+type FaqStepOption = {
+  label: string;
+  href?: string;
+  detail?: string;
+  detailLinkLabel?: string;
+  detailLinkHref?: string;
+  detailClosing?: string;
+  detailSecondaryLinkLabel?: string;
+  detailSecondaryLinkHref?: string;
+  detailSecondaryClosing?: string;
+};
+
+type FaqStep = {
+  label: string;
+  href?: string;
+  linkLabel?: string;
+  postLinkText?: string;
+  options?: FaqStepOption[];
+};
+
 type FaqExpandable = {
   intro?: string;
   linkLeadText?: string;
@@ -33,6 +53,43 @@ type FaqQuestion = {
   expandable?: FaqExpandable;
 };
 
+const gettingStartedSteps: FaqStep[] = [
+  {
+    label: "Join our Slack Channel to explore and ask questions.",
+    href: "https://museumofoceanscience.slack.com",
+    linkLabel: "Join our Slack Channel",
+    postLinkText: " to explore and ask questions.",
+  },
+  {
+    label: "Decide how you'd like to participate.",
+    options: [
+      {
+        label: "Propose a project.",
+        detailLinkLabel: "Use this form to tell us your idea.",
+        detailLinkHref: "https://forms.gle/4xWM6W2MoMXWH2bZ7",
+      },
+      {
+        label: "Join someone else's project (coming soon).",
+        detail: "Coming soon.",
+      },
+      {
+        label: "Join the leadership team or become a mentor",
+        detail: "Sweet,",
+        detailLinkLabel: "click here to see the leadership openings",
+        detailLinkHref: "https://museumofoceanscience.com/affiliates",
+        detailClosing: ", or message Janelle on ",
+        detailSecondaryLinkLabel: "Slack",
+        detailSecondaryLinkHref: "https://museumofoceanscience.slack.com",
+        detailSecondaryClosing: " if you don't see what you're looking for.",
+      },
+    ],
+  },
+  {
+    label: "Set up a meeting so that we get to meet you.",
+    href: "https://calendly.com/janelle-levine/30min",
+  },
+];
+
 const faqQuestions: FaqQuestion[] = [
   {
     question: "What can I expect during the cohort?",
@@ -46,16 +103,6 @@ const faqQuestions: FaqQuestion[] = [
       benefits: [],
       closing: "that our leadership team has put together so far.",
       linkOnNewParagraph: true,
-    },
-  },
-  {
-    question: "I'm interested! How can I get started?",
-    expandable: {
-      intro: "Join our",
-      linkLabel: "Slack Channel",
-      linkHref: "https://museumofoceanscience.slack.com",
-      benefits: [],
-      closing: "and send a message to Janelle letting her know you're interested!",
     },
   },
   {
@@ -127,6 +174,108 @@ export default function ClimateBaseFellowsStartHerePage() {
             already been worked on. Please keep in mind that this is a work-in-progress, and that
             we hope to continue updating this page with questions and answers as they arise.
           </p>
+          <div className="mt-8 max-w-4xl rounded-2xl border border-white/10 bg-white/5 p-6">
+            <p className="text-xs uppercase tracking-[0.25em] text-white/60">How To Join</p>
+            <div className="mt-4 space-y-3 text-sm text-white/80">
+              {gettingStartedSteps.map((step, stepIndex) => (
+                <div key={step.label}>
+                  <p>
+                    <span className="font-medium text-white">{`Step ${stepIndex + 1}: `}</span>
+                    {step.href ? (
+                      <>
+                        <a
+                          href={step.href}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          className="underline decoration-white/25 underline-offset-4 transition hover:text-[color:var(--mos-seafoam)] hover:decoration-[color:var(--mos-seafoam)]"
+                        >
+                          {step.linkLabel ?? step.label}
+                        </a>
+                        {step.postLinkText ? <span>{step.postLinkText}</span> : null}
+                      </>
+                    ) : (
+                      <span>{step.label}</span>
+                    )}
+                  </p>
+                  {step.options?.length ? (
+                    <div className="mt-4 overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-b from-white/[0.08] via-white/[0.04] to-transparent shadow-[0_24px_40px_-32px_rgba(0,0,0,0.9)]">
+                      <table className="min-w-full table-fixed text-left text-[13px] text-white/80">
+                        <thead>
+                          <tr className="border-b border-white/10 bg-black/35">
+                            <th className="w-[43%] px-4 py-2.5 text-[10px] font-medium uppercase tracking-[0.16em] text-white/60">
+                              I would like to...
+                            </th>
+                            <th className="w-10 px-1 py-2.5" aria-hidden="true"></th>
+                            <th className="px-4 py-2.5 text-[10px] font-medium uppercase tracking-[0.16em] text-white/60">
+                              What to do next
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {step.options.map((option, optionIndex) => (
+                            <tr
+                              key={option.label}
+                              className="align-top odd:bg-white/[0.015] even:bg-white/[0.04] transition-colors hover:bg-white/[0.08]"
+                            >
+                              <td className="px-4 py-2.5 text-white/90">
+                                <div className="flex items-center gap-3">
+                                  <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-white/20 bg-black/40 text-xs font-medium text-white/70">
+                                    {optionIndex + 1}
+                                  </span>
+                                  <span className="leading-snug text-[13px]">
+                                    {option.href ? (
+                                      <a
+                                        href={option.href}
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                        className="underline decoration-white/25 underline-offset-4 transition hover:text-[color:var(--mos-seafoam)] hover:decoration-[color:var(--mos-seafoam)]"
+                                      >
+                                        {option.label}
+                                      </a>
+                                    ) : (
+                                      <span>{option.label}</span>
+                                    )}
+                                  </span>
+                                </div>
+                              </td>
+                              <td className="w-10 px-1 py-2.5 text-center align-middle text-sm text-white/35">
+                                <span aria-hidden="true">→</span>
+                              </td>
+                              <td className="px-4 py-2.5 leading-relaxed text-[13px] text-white/75">
+                                {option.detail ? `${option.detail} ` : null}
+                                {option.detailLinkLabel && option.detailLinkHref ? (
+                                  <a
+                                    href={option.detailLinkHref}
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                    className="underline decoration-white/25 underline-offset-4 transition hover:text-[color:var(--mos-seafoam)] hover:decoration-[color:var(--mos-seafoam)]"
+                                  >
+                                    {option.detailLinkLabel}
+                                  </a>
+                                ) : null}
+                                {option.detailClosing ? option.detailClosing : null}
+                                {option.detailSecondaryLinkLabel && option.detailSecondaryLinkHref ? (
+                                  <a
+                                    href={option.detailSecondaryLinkHref}
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                    className="underline decoration-white/25 underline-offset-4 transition hover:text-[color:var(--mos-seafoam)] hover:decoration-[color:var(--mos-seafoam)]"
+                                  >
+                                    {option.detailSecondaryLinkLabel}
+                                  </a>
+                                ) : null}
+                                {option.detailSecondaryClosing ? option.detailSecondaryClosing : null}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  ) : null}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
