@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -11,6 +11,7 @@ export const metadata: Metadata = buildPageMetadata({
 
 type FaqBenefit = {
   label: string;
+  href?: string;
   subitems?: string[];
 };
 
@@ -45,6 +46,9 @@ type FaqExpandable = {
   secondaryClosing?: string;
   benefits: FaqBenefit[];
   closing?: string;
+  closingBeforeBenefits?: boolean;
+  resourcesIntro?: string;
+  resources?: FaqBenefit[];
   linkOnNewParagraph?: boolean;
 };
 
@@ -70,8 +74,10 @@ const gettingStartedSteps: FaqStep[] = [
         detailLinkHref: "https://forms.gle/4xWM6W2MoMXWH2bZ7",
       },
       {
-        label: "Join someone else's project (coming soon).",
-        detail: "Coming soon.",
+        label: "Join someone else's project.",
+        detailLinkLabel: "Join our Slack Channel",
+        detailLinkHref: "https://museumofoceanscience.slack.com",
+        detailClosing: " and let Janelle know you're interested.",
       },
       {
         label: "Join the leadership team or become a mentor",
@@ -92,6 +98,28 @@ const gettingStartedSteps: FaqStep[] = [
 ];
 
 const faqQuestions: FaqQuestion[] = [
+  {
+    question: "What kinds of projects can I work on?",
+    expandable: {
+      intro:
+        "As a Research Affiliate, you have the option to work on an Exhibit or a Research Question.",
+      benefits: [
+        {
+          label:
+            "Exhibits focus on translating ocean science into visual, interactive, and accessible experiences.",
+        },
+        {
+          label:
+            "Research Projects focus on answering a clear question through data, methods, and reproducible analysis.",
+        },
+      ],
+      resourcesIntro: "You can find a more comprehensive description of the standards here:",
+      resources: [
+        { label: "Exhibit Standards", href: "/exhibits/exhibit-standards" },
+        { label: "Research Standards", href: "/research/research-project-standards" },
+      ],
+    },
+  },
   {
     question: "What can I expect during the cohort?",
     expandable: {
@@ -230,7 +258,7 @@ export default function ClimateBaseFellowsStartHerePage() {
                                 </div>
                               </td>
                               <td className="w-10 px-1 py-2.5 text-center align-middle text-sm text-white/35">
-                                <span aria-hidden="true">→</span>
+                                <span aria-hidden="true">â†’</span>
                               </td>
                               <td className="px-4 py-2.5 leading-relaxed text-[13px] text-white/75">
                                 {option.detail ? `${option.detail} ` : null}
@@ -362,11 +390,27 @@ export default function ClimateBaseFellowsStartHerePage() {
                           {!question.expandable.linkHref && question.expandable.intro ? (
                             <p>{question.expandable.intro}</p>
                           ) : null}
+                          {!question.expandable.linkHref &&
+                          question.expandable.closingBeforeBenefits &&
+                          question.expandable.closing ? (
+                            <p>{question.expandable.closing}</p>
+                          ) : null}
                           {question.expandable.benefits.length ? (
                             <ul className="list-disc space-y-2 pl-5">
                               {question.expandable.benefits.map((benefit) => (
                                 <li key={benefit.label}>
-                                  {benefit.label}
+                                  {benefit.href ? (
+                                    <a
+                                      href={benefit.href}
+                                      target="_blank"
+                                      rel="noreferrer noopener"
+                                      className="underline decoration-white/25 underline-offset-4 transition hover:text-[color:var(--mos-seafoam)] hover:decoration-[color:var(--mos-seafoam)]"
+                                    >
+                                      {benefit.label}
+                                    </a>
+                                  ) : (
+                                    benefit.label
+                                  )}
                                   {benefit.subitems?.length ? (
                                     <ul className="mt-2 list-disc space-y-1 pl-5">
                                       {benefit.subitems.map((subitem) => (
@@ -378,8 +422,33 @@ export default function ClimateBaseFellowsStartHerePage() {
                               ))}
                             </ul>
                           ) : null}
-                          {!question.expandable.linkHref && question.expandable.closing ? (
+                          {!question.expandable.linkHref &&
+                          !question.expandable.closingBeforeBenefits &&
+                          question.expandable.closing ? (
                             <p>{question.expandable.closing}</p>
+                          ) : null}
+                          {question.expandable.resourcesIntro ? (
+                            <p>{question.expandable.resourcesIntro}</p>
+                          ) : null}
+                          {question.expandable.resources?.length ? (
+                            <ul className="list-disc space-y-2 pl-5">
+                              {question.expandable.resources.map((resource) => (
+                                <li key={resource.label}>
+                                  {resource.href ? (
+                                    <a
+                                      href={resource.href}
+                                      target="_blank"
+                                      rel="noreferrer noopener"
+                                      className="underline decoration-white/25 underline-offset-4 transition hover:text-[color:var(--mos-seafoam)] hover:decoration-[color:var(--mos-seafoam)]"
+                                    >
+                                      {resource.label}
+                                    </a>
+                                  ) : (
+                                    resource.label
+                                  )}
+                                </li>
+                              ))}
+                            </ul>
                           ) : null}
                         </div>
                       </details>
@@ -405,3 +474,4 @@ export default function ClimateBaseFellowsStartHerePage() {
     </div>
   );
 }
+

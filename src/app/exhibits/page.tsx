@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 import { exhibits } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/seo";
@@ -28,9 +29,18 @@ export default function ExhibitsPage() {
         <div className="mx-auto w-full max-w-6xl px-6 py-12">
           <div className="grid gap-8 md:grid-cols-2">
             {exhibits.map((exhibit) => (
-              <div key={exhibit.slug} className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+              <Link
+                key={exhibit.slug}
+                href={`/exhibits/${exhibit.slug}`}
+                className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition hover:border-white/25"
+              >
                 <div className="relative h-56">
-                  <Image src={exhibit.visualAssets[0]} alt={exhibit.title} fill className="object-cover" />
+                  <Image
+                    src={exhibit.visualAssets[0]}
+                    alt={exhibit.title}
+                    fill
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                  />
                 </div>
                 <div className="space-y-3 p-6">
                   <p className="text-xs uppercase tracking-[0.3em] text-white/60">
@@ -39,7 +49,7 @@ export default function ExhibitsPage() {
                   <h2 className="text-2xl">{exhibit.title}</h2>
                   <p className="text-white/70">{exhibit.description}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

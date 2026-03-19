@@ -41,6 +41,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: [{ url: "/favicon.ico?v=20260318", sizes: "any" }],
+    shortcut: ["/favicon.ico?v=20260318"],
+  },
   openGraph: {
     title: SITE_NAME,
     description:
