@@ -41,7 +41,7 @@ export default async function ResearchDetail({
       <section className="pt-48 sm:pt-56">
         <div className="mx-auto w-full max-w-6xl px-6">
           <p className="text-xs uppercase tracking-[0.4em] text-white/60">
-            {project.tags.join(" Â· ")} Â· {project.status}
+            {project.tags.join(" \u00B7 ")} {"\u00B7"} {project.status}
           </p>
           <h1 className="mt-4 text-4xl">{project.title}</h1>
           <p className="mt-4 max-w-3xl text-white/70">{project.summary}</p>

@@ -35,7 +35,7 @@ export default function SiteFooter() {
           <div className="space-y-2 text-white/70">
             <p className="text-xs uppercase tracking-[0.3em] text-white/50">Slack</p>
             <a
-              href="https://museumofoceanscience.slack.com"
+              href="https://join.slack.com/t/museumofoceanscience/shared_invite/zt-3the54sjo-1REeVZSWBPW144io7oxJAg"
               target="_blank"
               rel="noreferrer noopener"
               className="text-sm underline decoration-white/25 underline-offset-4 transition hover:text-[color:var(--mos-seafoam)] hover:decoration-[color:var(--mos-seafoam)]"

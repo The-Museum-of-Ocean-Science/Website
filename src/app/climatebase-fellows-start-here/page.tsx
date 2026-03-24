@@ -61,7 +61,7 @@ type FaqQuestion = {
 const gettingStartedSteps: FaqStep[] = [
   {
     label: "Join our Slack Channel to explore and ask questions.",
-    href: "https://museumofoceanscience.slack.com",
+    href: "https://join.slack.com/t/museumofoceanscience/shared_invite/zt-3the54sjo-1REeVZSWBPW144io7oxJAg",
     linkLabel: "Join our Slack Channel",
     postLinkText: " to explore and ask questions. Anyone is welcome, even if you're just curious.",
   },
@@ -76,7 +76,7 @@ const gettingStartedSteps: FaqStep[] = [
       {
         label: "Join someone else's project.",
         detailLinkLabel: "Join our Slack Channel",
-        detailLinkHref: "https://museumofoceanscience.slack.com",
+        detailLinkHref: "https://join.slack.com/t/museumofoceanscience/shared_invite/zt-3the54sjo-1REeVZSWBPW144io7oxJAg",
         detailClosing: " and let Janelle know you're interested.",
       },
       {
@@ -86,7 +86,7 @@ const gettingStartedSteps: FaqStep[] = [
         detailLinkHref: "https://museumofoceanscience.com/affiliates",
         detailClosing: ", or message Janelle on ",
         detailSecondaryLinkLabel: "Slack",
-        detailSecondaryLinkHref: "https://museumofoceanscience.slack.com",
+        detailSecondaryLinkHref: "https://join.slack.com/t/museumofoceanscience/shared_invite/zt-3the54sjo-1REeVZSWBPW144io7oxJAg",
         detailSecondaryClosing: " if you don't see what you're looking for.",
       },
     ],
@@ -134,7 +134,7 @@ const faqQuestions: FaqQuestion[] = [
       secondaryLeadText:
         "However, if you can't find what you're looking for, we really encourage you to join the",
       secondaryLinkLabel: "Slack Channel",
-      secondaryLinkHref: "https://museumofoceanscience.slack.com",
+      secondaryLinkHref: "https://join.slack.com/t/museumofoceanscience/shared_invite/zt-3the54sjo-1REeVZSWBPW144io7oxJAg",
       secondaryClosing: "and ask someone on the team!",
       linkOnNewParagraph: true,
     },
@@ -145,7 +145,7 @@ const faqQuestions: FaqQuestion[] = [
       intro: "Affiliates in good standing who complete qualifying artifacts may receive:",
       benefits: [
         {
-          label: "Official Title for the term (can use on resume or Linkedin)",
+          label: "Official Title for one year (can use on resume or Linkedin)",
           subitems: [
             "Research Affiliate",
             "Senior Research Affiliate",
@@ -258,7 +258,7 @@ export default function ClimateBaseFellowsStartHerePage() {
                                 </div>
                               </td>
                               <td className="w-10 px-1 py-2.5 text-center align-middle text-sm text-white/35">
-                                <span aria-hidden="true">â†’</span>
+                                <span aria-hidden="true">{"\u2192"}</span>
                               </td>
                               <td className="px-4 py-2.5 leading-relaxed text-[13px] text-white/75">
                                 {option.detail ? `${option.detail} ` : null}
