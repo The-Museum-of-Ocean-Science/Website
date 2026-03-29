@@ -32,6 +32,7 @@ const roleSectionTitle: Record<AffiliateRole, string> = {
 };
 
 const pinnedFirstSlug = "elara-reed";
+const hiddenAffiliateSlugs = new Set(["director-partnerships"]);
 
 type Role = (typeof roles)[number];
 
@@ -39,10 +40,14 @@ export default function AffiliatesGrid() {
   const [role, setRole] = useState<Role>("All");
 
   const filtered = useMemo(() => {
+    const visibleAffiliates = affiliates.filter(
+      (affiliate) => !hiddenAffiliateSlugs.has(affiliate.slug)
+    );
+
     const scoped =
       role === "All"
-        ? affiliates
-        : affiliates.filter((affiliate) => affiliate.role === role);
+        ? visibleAffiliates
+        : visibleAffiliates.filter((affiliate) => affiliate.role === role);
 
     return [...scoped].sort((a, b) => {
       if (a.slug === pinnedFirstSlug && b.slug !== pinnedFirstSlug) return -1;
@@ -116,7 +121,7 @@ export default function AffiliatesGrid() {
                     </div>
                     {affiliate.fitPoints?.length ? (
                       <div className="pt-2">
-                        <p className="text-sm text-white">You'll love this position if...</p>
+                        <p className="text-sm text-white">You&apos;ll love this position if...</p>
                         <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-white/70">
                           {affiliate.fitPoints.map((point) => (
                             <li key={point}>{point}</li>
