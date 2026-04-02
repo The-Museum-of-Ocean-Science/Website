@@ -148,8 +148,6 @@ const faqQuestions: FaqQuestion[] = [
           label: "Official Title for one year (can use on resume or Linkedin)",
           subitems: [
             "Research Affiliate",
-            "Senior Research Affiliate",
-            "Project Lead / Project Manager",
             "Functional designation or title",
           ],
         },
@@ -162,7 +160,6 @@ const faqQuestions: FaqQuestion[] = [
           label:
             "Letter of recommendation with MOS header, confirming affiliation and contribution",
         },
-        { label: "Eligibility for consideration in contract-funded projects" },
         { label: "Educational and Mentorship opportunities" },
       ],
       closing:

@@ -77,10 +77,10 @@ export type Exhibit = {
 
 export const affiliates: Affiliate[] = [
   {
-    name: "Janelle Levine, M.Sc.",
+    name: "Janelle Levine",
     slug: "elara-reed",
     role: "Leadership Team",
-    roleModifier: "CEO & Founder",
+    roleModifier: "CEO",
     termStart: "2024-01-10",
     bio: "Janelle is a marine scientist working at the intersection of ocean data analysis, climate risk intelligence, and public-facing scientific communication. Her research focuses on satellite-derived environmental datasets, and coastal system change.\n\nShe founded the Museum of Ocean Science as an independent ocean data lab dedicated to structured, reproducible research and clear environmental reporting.",
     headshot: "/assets/janelle-headshot.png",
@@ -89,6 +89,18 @@ export const affiliates: Affiliate[] = [
     emailVisible: false,
     email: "elara@mos.org",
     website: "https://example.com",
+  },
+  {
+    name: "Jenny Shufutinskaya",
+    slug: "jenny-s",
+    role: "Leadership Team",
+    roleModifier: "UX & Accessibility Lead",
+    termStart: "2026-04-01",
+    bio: "Jenny is a UX Designer working at the intersection of accessibility, health, and human-centered technology.\n\nShe currently designs tools at BanooHealth that support immigrant women in navigating access to essential healthcare and legal resources. This work informs her approach to equity, trust, and designing for complex, real-world needs.\n\nPreviously, she contributed to UX strategy and design across mission-driven organizations, applying systems thinking and emerging technologies to build intuitive, scalable experiences.\n\nIn this project, she focuses on making complex information clear, accessible, and actionable - particularly for communities often underserved by traditional systems.",
+    headshot: "/assets/jenny-s.jpg",
+    projectSlugs: ["research-project-standards"],
+    artifacts: [],
+    emailVisible: false,
   },
   {
     name: "First & Last Name",

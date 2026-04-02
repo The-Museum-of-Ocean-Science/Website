@@ -107,14 +107,18 @@ export default function AffiliatesGrid() {
                   <div className="mt-5 space-y-2">
                     <h2 className="text-xl text-white">{affiliate.name}</h2>
                     {affiliate.roleModifier ? (
-                      <p className="text-sm text-white/70 -mt-1 mb-2">{affiliate.roleModifier}</p>
+                      <p className="-mt-1 mb-3 text-xs uppercase tracking-[0.14em] text-white/85">
+                        {affiliate.roleModifier}
+                      </p>
                     ) : (
                       <div className="h-2 mb-2" />
                     )}
-                    <p className="text-xs uppercase tracking-[0.3em] text-white/60">
-                      {affiliate.role}
-                    </p>
-                    <div className="space-y-3 text-sm text-white/70">
+                    {affiliate.role !== "Leadership Team" ? (
+                      <p className="text-xs uppercase tracking-[0.3em] text-white/60">
+                        {affiliate.role}
+                      </p>
+                    ) : null}
+                    <div className="space-y-3 border-t border-white/10 pt-2 text-sm leading-relaxed text-white/65">
                       {affiliate.bio.split("\n\n").map((paragraph) => (
                         <p key={paragraph}>{paragraph}</p>
                       ))}
