@@ -5,7 +5,7 @@ const roles = [
   "Leadership Team",
   "Advisors",
   "Research Affiliates",
-];
+] as const;
 
 type Role = (typeof roles)[number];
 
