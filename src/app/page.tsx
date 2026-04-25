@@ -248,7 +248,7 @@ export default function HomePage() {
           </div>
           <div className="mt-10 text-center md:mt-12">
             <Link href="/climatebase-fellows-start-here" className={CTA_PRIMARY_CLASS}>
-              Accepting Proposals through 4/9
+              Stay tuned for the next cohort
             </Link>
           </div>
         </div>
@@ -382,10 +382,7 @@ export default function HomePage() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link href="/climatebase-fellows-start-here" className={CTA_PRIMARY_CLASS}>
-                Apply for Capstone Project
-                <span className="ml-2 text-xs" aria-hidden="true">
-                  {"\u2192"}
-                </span>
+                Apply →
               </Link>
               <Link href="/affiliates" className={CTA_SECONDARY_CLASS}>
                 View Affiliates

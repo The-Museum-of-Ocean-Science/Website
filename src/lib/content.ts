@@ -23,6 +23,7 @@ export type AffiliateRole =
   | "Research Affiliate"
   | "Senior Research Affiliate"
   | "Project Lead"
+  | "Science Advisor"
   | "Leadership Team";
 
 export type Affiliate = {
@@ -34,6 +35,8 @@ export type Affiliate = {
   termEnd?: string;
   bio: string;
   headshot: string;
+  headshotPosition?: string;
+  headshotFit?: "cover" | "contain";
   projectSlugs: string[];
   artifacts: string[];
   emailVisible: boolean;
@@ -96,8 +99,10 @@ export const affiliates: Affiliate[] = [
     role: "Leadership Team",
     roleModifier: "UX & Accessibility Lead",
     termStart: "2026-04-01",
-    bio: "Jenny is a UX Designer working at the intersection of accessibility, health, and human-centered technology.\n\nShe currently designs tools at BanooHealth that support immigrant women in navigating access to essential healthcare and legal resources. This work informs her approach to equity, trust, and designing for complex, real-world needs.\n\nPreviously, she contributed to UX strategy and design across mission-driven organizations, applying systems thinking and emerging technologies to build intuitive, scalable experiences.\n\nIn this project, she focuses on making complex information clear, accessible, and actionable - particularly for communities often underserved by traditional systems.",
+    bio: "Jenny is a UX Designer working at the intersection of accessibility, health, and human-centered technology.\n\nShe currently designs tools at BeanooHealth that support immigrant women in navigating access to essential healthcare and legal resources. This work informs her approach to equity, trust, and designing for complex, real-world needs.\n\nPreviously, she contributed to UX strategy and design across mission-driven organizations, applying systems thinking and emerging technologies to build intuitive, scalable experiences.\n\nIn this project, she focuses on making complex information clear, accessible, and actionable - particularly for communities often underserved by traditional systems.",
     headshot: "/assets/jenny-s.jpg",
+    headshotPosition: "center 14%",
+    headshotFit: "contain",
     projectSlugs: ["research-project-standards"],
     artifacts: [],
     emailVisible: false,
@@ -272,10 +277,9 @@ export const navigation = [
   { label: "Research", href: "/research" },
   { label: "Exhibits", href: "/exhibits" },
   { label: "Research Affiliates", href: "/affiliates" },
-  { label: "ClimateBase Fellows Start Here", href: "/climatebase-fellows-start-here" },
+  { label: "Start Here to Join Us", href: "/climatebase-fellows-start-here" },
   { label: "Support", href: "/support", disabled: true },
   { label: "Contact", href: "/contact", disabled: true },
-  { label: "Ocean Risk Snapshot (Coming Soon)", href: "/ocean-risk", disabled: true },
 ];
 
 

@@ -6,66 +6,78 @@ import { useMemo, useState } from "react";
 import { affiliates, AffiliateRole } from "@/lib/content";
 import AffiliatesFilters from "./affiliates-filters";
 
-const roles: (AffiliateRole | "All")[] = [
-  "All",
-  "Leadership Team",
-  "Project Lead",
-  "Senior Research Affiliate",
-  "Research Affiliate",
-  "Provisional Research Associate",
-];
+type Role = "All" | "Leadership Team" | "Advisors" | "Research Affiliates";
+type DisplayRole = Exclude<Role, "All">;
 
-const rolePriority: Record<AffiliateRole, number> = {
+const rolePriority: Record<DisplayRole, number> = {
   "Leadership Team": 0,
-  "Project Lead": 1,
-  "Senior Research Affiliate": 2,
-  "Research Affiliate": 3,
-  "Provisional Research Associate": 4,
+  "Advisors": 1,
+  "Research Affiliates": 2,
 };
 
-const roleSectionTitle: Record<AffiliateRole, string> = {
-  "Leadership Team": "Leadership Team",
-  "Project Lead": "Project Leads",
-  "Senior Research Affiliate": "Senior Research Affiliates",
-  "Research Affiliate": "Research Affiliates",
-  "Provisional Research Associate": "Provisional Research Associates",
+const roleSectionTitle: Record<DisplayRole, string> = {
+  "Leadership Team": "Admin Team",
+  "Advisors": "Advisors",
+  "Research Affiliates": "Research Affiliates",
 };
 
 const pinnedFirstSlug = "elara-reed";
+const showOpenPositionCards = false;
 const hiddenAffiliateSlugs = new Set(["director-partnerships"]);
 
-type Role = (typeof roles)[number];
+function getDisplayRole(role: AffiliateRole): DisplayRole {
+  if (
+    role === "Research Affiliate" ||
+    role === "Senior Research Affiliate" ||
+    role === "Provisional Research Associate"
+  ) {
+    return "Research Affiliates";
+  }
+
+  if (role === "Project Lead" || role === "Science Advisor") {
+    return "Advisors";
+  }
+
+  return role;
+}
 
 export default function AffiliatesGrid() {
   const [role, setRole] = useState<Role>("All");
 
   const filtered = useMemo(() => {
     const visibleAffiliates = affiliates.filter(
-      (affiliate) => !hiddenAffiliateSlugs.has(affiliate.slug)
+      (affiliate) =>
+        !hiddenAffiliateSlugs.has(affiliate.slug) &&
+        (showOpenPositionCards || affiliate.name !== "Open Position")
     );
 
     const scoped =
       role === "All"
         ? visibleAffiliates
-        : visibleAffiliates.filter((affiliate) => affiliate.role === role);
+        : visibleAffiliates.filter(
+            (affiliate) => getDisplayRole(affiliate.role) === role
+          );
 
     return [...scoped].sort((a, b) => {
       if (a.slug === pinnedFirstSlug && b.slug !== pinnedFirstSlug) return -1;
       if (b.slug === pinnedFirstSlug && a.slug !== pinnedFirstSlug) return 1;
 
-      const rankDelta = rolePriority[a.role] - rolePriority[b.role];
+      const rankDelta =
+        rolePriority[getDisplayRole(a.role)] - rolePriority[getDisplayRole(b.role)];
       if (rankDelta !== 0) return rankDelta;
       return a.name.localeCompare(b.name);
     });
   }, [role]);
 
   const groupedByRole = useMemo(() => {
-    const map = new Map<AffiliateRole, typeof filtered>();
+    const map = new Map<DisplayRole, typeof filtered>();
     for (const affiliate of filtered) {
-      if (!map.has(affiliate.role)) {
-        map.set(affiliate.role, []);
+      const displayRole = getDisplayRole(affiliate.role);
+
+      if (!map.has(displayRole)) {
+        map.set(displayRole, []);
       }
-      map.get(affiliate.role)!.push(affiliate);
+      map.get(displayRole)!.push(affiliate);
     }
     return map;
   }, [filtered]);
@@ -96,12 +108,23 @@ export default function AffiliatesGrid() {
                   key={affiliate.slug}
                   className="rounded-2xl border border-white/10 bg-white/5 p-6"
                 >
-                  <div className="relative h-40 w-full overflow-hidden rounded-xl">
+                  <div
+                    className={`relative h-40 w-full overflow-hidden rounded-xl ${
+                      affiliate.headshotFit === "contain" ? "bg-white/[0.03]" : "bg-black"
+                    }`}
+                  >
                     <Image
                       src={affiliate.headshot}
                       alt={affiliate.name}
                       fill
-                      className="object-cover"
+                      className={
+                        affiliate.headshotFit === "contain" ? "object-contain" : "object-cover"
+                      }
+                      style={
+                        affiliate.headshotPosition
+                          ? { objectPosition: affiliate.headshotPosition }
+                          : undefined
+                      }
                     />
                   </div>
                   <div className="mt-5 space-y-2">
@@ -113,9 +136,9 @@ export default function AffiliatesGrid() {
                     ) : (
                       <div className="h-2 mb-2" />
                     )}
-                    {affiliate.role !== "Leadership Team" ? (
+                    {getDisplayRole(affiliate.role) !== "Leadership Team" ? (
                       <p className="text-xs uppercase tracking-[0.3em] text-white/60">
-                        {affiliate.role}
+                        {getDisplayRole(affiliate.role)}
                       </p>
                     ) : null}
                     <div className="space-y-3 border-t border-white/10 pt-2 text-sm leading-relaxed text-white/65">

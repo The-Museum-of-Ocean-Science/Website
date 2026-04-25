@@ -80,14 +80,11 @@ const gettingStartedSteps: FaqStep[] = [
         detailClosing: " and let Janelle know you're interested.",
       },
       {
-        label: "Join the leadership team or become a mentor",
-        detail: "Sweet,",
-        detailLinkLabel: "click here to see the leadership openings",
-        detailLinkHref: "https://museumofoceanscience.com/affiliates",
-        detailClosing: ", or message Janelle on ",
-        detailSecondaryLinkLabel: "Slack",
-        detailSecondaryLinkHref: "https://join.slack.com/t/museumofoceanscience/shared_invite/zt-3the54sjo-1REeVZSWBPW144io7oxJAg",
-        detailSecondaryClosing: " if you don't see what you're looking for.",
+        label: "Join as a science or creative advisor.",
+        detail: "Join the ",
+        detailLinkLabel: "Slack",
+        detailLinkHref: "https://join.slack.com/t/museumofoceanscience/shared_invite/zt-3the54sjo-1REeVZSWBPW144io7oxJAg",
+        detailClosing: " and reach out to Janelle.",
       },
     ],
   },
@@ -118,25 +115,6 @@ const faqQuestions: FaqQuestion[] = [
         { label: "Exhibit Standards", href: "/exhibits/exhibit-standards" },
         { label: "Research Standards", href: "/research/research-project-standards" },
       ],
-    },
-  },
-  {
-    question: "What can I expect during the cohort?",
-    expandable: {
-      intro:
-        "We're still actively working on this documentation, but you're welcome to see what we've put together so far.",
-      linkLeadText: "Feel free to check out the",
-      linkLabel: "planning documents",
-      linkHref:
-        "https://docs.google.com/document/d/18NrWtPUjs_SNdZr687aBT7UWqx31YO3S9-PdqKLm8pQ/edit?tab=t.0#heading=h.oaav9hopg4q6",
-      benefits: [],
-      closing: ", which will remain publicly at least through the end of the cohort.",
-      secondaryLeadText:
-        "However, if you can't find what you're looking for, we really encourage you to join the",
-      secondaryLinkLabel: "Slack Channel",
-      secondaryLinkHref: "https://join.slack.com/t/museumofoceanscience/shared_invite/zt-3the54sjo-1REeVZSWBPW144io7oxJAg",
-      secondaryClosing: "and ask someone on the team!",
-      linkOnNewParagraph: true,
     },
   },
   {
@@ -471,4 +449,3 @@ export default function ClimateBaseFellowsStartHerePage() {
     </div>
   );
 }
-

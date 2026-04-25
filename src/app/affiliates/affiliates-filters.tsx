@@ -1,19 +1,17 @@
 ﻿"use client";
 
-import { AffiliateRole } from "@/lib/content";
-
-const roles: (AffiliateRole | "All")[] = [
+const roles = [
   "All",
   "Leadership Team",
-  "Project Lead",
-  "Senior Research Affiliate",
-  "Research Affiliate",
-  "Provisional Research Associate",
+  "Advisors",
+  "Research Affiliates",
 ];
 
+type Role = (typeof roles)[number];
+
 type Props = {
-  role: (typeof roles)[number];
-  onRoleChange: (value: (typeof roles)[number]) => void;
+  role: Role;
+  onRoleChange: (value: Role) => void;
 };
 
 export default function AffiliatesFilters({ role, onRoleChange }: Props) {
@@ -29,7 +27,7 @@ export default function AffiliatesFilters({ role, onRoleChange }: Props) {
               role === item ? "border-white text-white" : "border-white/20 text-white/60"
             }`}
           >
-            {item}
+            {item === "Leadership Team" ? "Admin Team" : item}
           </button>
         ))}
       </div>

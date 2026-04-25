@@ -14,9 +14,9 @@ export default function ContactPage() {
       <section className="pt-48 sm:pt-56">
         <div className="mx-auto w-full max-w-5xl px-6">
           <p className="text-xs uppercase tracking-[0.4em] text-white/60">Contact</p>
-          <h1 className="mt-4 text-4xl">Let's Talk</h1>
+          <h1 className="mt-4 text-4xl">Let&apos;s Talk</h1>
           <p className="mt-4 max-w-2xl text-white/70">
-            Reach out about research collaborations, ocean risk consulting, or exhibitions.
+            Reach out about research collaborations or exhibitions.
           </p>
         </div>
       </section>

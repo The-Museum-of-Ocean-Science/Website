@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { affiliates, oceanRiskSnapshots, projects } from "@/lib/content";
+import { affiliates, projects } from "@/lib/content";
 import { SITE_URL } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -12,7 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/affiliates`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE_URL}/exhibits`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/programs`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${SITE_URL}/ocean-risk`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     {
       url: `${SITE_URL}/climatebase-fellows-start-here`,
       lastModified: now,
@@ -37,12 +36,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const oceanRiskRoutes: MetadataRoute.Sitemap = oceanRiskSnapshots.map((snapshot) => ({
-    url: `${SITE_URL}/ocean-risk/${snapshot.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.7,
-  }));
-
-  return [...staticRoutes, ...researchRoutes, ...affiliateRoutes, ...oceanRiskRoutes];
+  return [...staticRoutes, ...researchRoutes, ...affiliateRoutes];
 }

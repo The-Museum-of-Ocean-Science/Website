@@ -36,8 +36,24 @@ export default function AffiliateDetail({ params }: { params: { slug: string } }
       <section className="pt-48 sm:pt-56">
         <div className="mx-auto w-full max-w-5xl px-6">
           <div className="grid gap-10 md:grid-cols-[0.6fr_1.4fr]">
-            <div className="relative h-64 overflow-hidden rounded-2xl border border-white/10">
-              <Image src={affiliate.headshot} alt={affiliate.name} fill className="object-cover" />
+            <div
+              className={`relative h-64 overflow-hidden rounded-2xl border border-white/10 ${
+                affiliate.headshotFit === "contain" ? "bg-white/[0.03]" : "bg-black"
+              }`}
+            >
+              <Image
+                src={affiliate.headshot}
+                alt={affiliate.name}
+                fill
+                className={
+                  affiliate.headshotFit === "contain" ? "object-contain" : "object-cover"
+                }
+                style={
+                  affiliate.headshotPosition
+                    ? { objectPosition: affiliate.headshotPosition }
+                    : undefined
+                }
+              />
             </div>
             <div className="space-y-4">
               <p className="text-xs uppercase tracking-[0.4em] text-white/60">Affiliate Profile</p>
