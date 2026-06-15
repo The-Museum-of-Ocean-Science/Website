@@ -102,14 +102,14 @@ export default function AffiliatesGrid() {
                 {roleSectionTitle[groupRole]}
               </p>
             ) : null}
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid gap-8 md:grid-cols-2 2xl:grid-cols-3">
               {groupedByRole.get(groupRole)!.map((affiliate) => (
                 <div
                   key={affiliate.slug}
                   className="rounded-2xl border border-white/10 bg-white/5 p-6"
                 >
                   <div
-                    className={`relative h-40 w-full overflow-hidden rounded-xl ${
+                    className={`relative h-36 w-full overflow-hidden rounded-xl ${
                       affiliate.headshotFit === "contain" ? "bg-white/[0.03]" : "bg-black"
                     }`}
                   >
@@ -127,7 +127,7 @@ export default function AffiliatesGrid() {
                       }
                     />
                   </div>
-                  <div className="mt-5 space-y-2">
+                  <div className="mt-4 space-y-2">
                     <h2 className="text-xl text-white">{affiliate.name}</h2>
                     {affiliate.roleModifier ? (
                       <p className="-mt-1 mb-3 text-xs uppercase tracking-[0.14em] text-white/85">
