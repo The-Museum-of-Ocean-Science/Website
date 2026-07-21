@@ -1,0 +1,30 @@
+
+> mos@0.1.0 dev
+> next dev --webpack
+
+▲ Next.js 16.1.6 (webpack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.30.151:3000
+
+✓ Starting...
+✓ Ready in 3.8s
+ GET / 200 in 3.3s (compile: 3.0s, render: 253ms)
+ GET /affiliates 200 in 1259ms (compile: 989ms, render: 270ms)
+ GET /affiliates 200 in 203ms (compile: 21ms, render: 181ms)
+ GET /affiliates 200 in 138ms (compile: 10ms, render: 129ms)
+ GET /affiliates 200 in 78ms (compile: 5ms, render: 73ms)
+ GET /affiliates 200 in 208ms (compile: 50ms, render: 158ms)
+ GET /affiliates 200 in 410ms (compile: 183ms, render: 227ms)
+ GET /affiliates 200 in 98ms (compile: 6ms, render: 92ms)
+ GET /affiliates 200 in 82ms (compile: 7ms, render: 75ms)
+ GET /affiliates 200 in 83ms (compile: 6ms, render: 76ms)
+ GET /affiliates 200 in 79ms (compile: 7ms, render: 72ms)
+ GET /affiliates 200 in 81ms (compile: 6ms, render: 75ms)
+ GET /affiliates 200 in 113ms (compile: 7ms, render: 106ms)
+ GET /affiliates 200 in 372ms (compile: 152ms, render: 220ms)
+ GET /affiliates 200 in 128ms (compile: 11ms, render: 117ms)
+ GET /affiliates 200 in 88ms (compile: 8ms, render: 81ms)
+ GET /affiliates 200 in 333ms (compile: 213ms, render: 120ms)
+ GET /affiliates 200 in 916ms (compile: 768ms, render: 148ms)
+ GET /affiliates 200 in 59ms (compile: 9ms, render: 50ms)
+ GET /affiliates 200 in 205ms (compile: 6ms, render: 199ms)

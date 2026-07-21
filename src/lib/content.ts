@@ -97,7 +97,7 @@ export const affiliates: Affiliate[] = [
     name: "Jenny Shufutinskaya",
     slug: "jenny-s",
     role: "Leadership Team",
-    roleModifier: "UX & Accessibility Lead",
+    roleModifier: "Director of User Experience",
     termStart: "2026-04-01",
     bio: "Jenny is a UX Designer working at the intersection of accessibility, health, and human-centered technology.\n\nShe currently designs tools at BeanooHealth that support immigrant women in navigating access to essential healthcare and legal resources. This work informs her approach to equity, trust, and designing for complex, real-world needs.\n\nPreviously, she contributed to UX strategy and design across mission-driven organizations, applying systems thinking and emerging technologies to build intuitive, scalable experiences.\n\nIn this project, she focuses on making complex information clear, accessible, and actionable - particularly for communities often underserved by traditional systems.",
     headshot: "/assets/jenny-s.jpg",
