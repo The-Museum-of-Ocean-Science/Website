@@ -138,7 +138,7 @@ export default function AffiliatesGrid() {
                     )}
                     {getDisplayRole(affiliate.role) !== "Leadership Team" ? (
                       <p className="text-xs uppercase tracking-[0.3em] text-white/60">
-                        {getDisplayRole(affiliate.role)}
+                        {affiliate.role}
                       </p>
                     ) : null}
                     <div className="space-y-3 border-t border-white/10 pt-2 text-sm leading-relaxed text-white/65">
