@@ -46,7 +46,13 @@ export default function SiteFooter() {
             <p className="text-sm">Global</p>
           </div>
           <div className="pt-2">
-            <div className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/5">
+            <a
+              href="https://www.linkedin.com/company/the-museum-of-ocean-science/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Museum of Ocean Science on LinkedIn (opens in a new tab)"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/5 transition hover:border-[color:var(--mos-seafoam)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[color:var(--mos-seafoam)]"
+            >
               <Image
                 src="/assets/linkedin-logo.png"
                 alt="LinkedIn"
@@ -54,7 +60,7 @@ export default function SiteFooter() {
                 height={18}
                 className="h-4 w-4 object-contain"
               />
-            </div>
+            </a>
           </div>
         </div>
       </div>
