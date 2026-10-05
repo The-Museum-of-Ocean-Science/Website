@@ -41,6 +41,7 @@ export default function ExhibitsPage() {
                     src={exhibit.visualAssets[0]}
                     alt={exhibit.title}
                     fill
+                    style={{ objectPosition: exhibit.coverPosition ?? "center" }}
                     className="object-cover transition duration-500 group-hover:scale-105"
                   />
                 </div>

@@ -74,6 +74,7 @@ export type Exhibit = {
   type: "Data Art" | "Virtual Community Project" | "Lego" | "Gallery" | "Instructions" | "Interactive Story";
   description: string;
   visualAssets: string[];
+  coverPosition?: string;
   externalUrl?: string;
   embedUrl?: string;
   year: string;
@@ -275,7 +276,8 @@ export const exhibits: Exhibit[] = [
     slug: "waves-at-work",
     type: "Data Art",
     description: "Explore seasonal wave conditions near the Golden Gate and use ocean data to plan a marine construction work window.",
-    visualAssets: ["/assets/waves-at-work-project.webp"],
+    visualAssets: ["/assets/waves-at-work-cover.webp"],
+    coverPosition: "right center",
     externalUrl: "https://janellelevine.github.io/ConstructionWaves/",
     year: "2026",
   },
