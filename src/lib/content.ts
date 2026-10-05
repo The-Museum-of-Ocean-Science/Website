@@ -71,9 +71,10 @@ export type Program = {
 export type Exhibit = {
   title: string;
   slug: string;
-  type: "Data Art" | "Virtual Exhibit" | "Lego" | "Gallery" | "Instructions";
+  type: "Data Art" | "Virtual Community Project" | "Lego" | "Gallery" | "Instructions" | "Interactive Story";
   description: string;
   visualAssets: string[];
+  externalUrl?: string;
   embedUrl?: string;
   year: string;
 };
@@ -252,10 +253,37 @@ export const programs: Program[] = [
 
 export const exhibits: Exhibit[] = [
   {
-    title: "Exhibit Standards",
+    title: "Taylor Swift vs. The Anglerfish",
+    slug: "taylor-swift-vs-the-anglerfish",
+    type: "Interactive Story",
+    description: "Explore how a viral anglerfish captured public attention through a comparison of Wikipedia pageviews with Taylor Swift.",
+    visualAssets: ["/assets/anglerfish-project.webp"],
+    externalUrl: "https://janellelevine.github.io/AnglerfishScrollytale/",
+    year: "2026",
+  },
+  {
+    title: "Sight, Sound and Survival in the Deep",
+    slug: "sight-sound-and-survival-in-the-deep",
+    type: "Interactive Story",
+    description: "Discover how sperm whales and giant squid use sight, sound, and remarkable adaptations to survive in the deep ocean.",
+    visualAssets: ["/assets/squid-whale-project.webp"],
+    externalUrl: "https://janellelevine.github.io/SquidvWhale/docs/index.html",
+    year: "2026",
+  },
+  {
+    title: "Waves at Work",
+    slug: "waves-at-work",
+    type: "Data Art",
+    description: "Explore seasonal wave conditions near the Golden Gate and use ocean data to plan a marine construction work window.",
+    visualAssets: ["/assets/waves-at-work-project.webp"],
+    externalUrl: "https://janellelevine.github.io/ConstructionWaves/",
+    year: "2026",
+  },
+  {
+    title: "Community Project Standards",
     slug: "exhibit-standards",
     type: "Instructions",
-    description: "What makes a great MOS exhibit?",
+    description: "What makes a great MOS community project?",
     visualAssets: ["/assets/research-2.png"],
     embedUrl:
       "https://docs.google.com/document/d/1DA6d6Ay8DV4zbNT3IbgfqZ3LNq49GPlInKVbhaz_BME/preview",
@@ -266,7 +294,7 @@ export const exhibits: Exhibit[] = [
 export const navigation = [
   { label: "Home", href: "/" },
   { label: "Research", href: "/research" },
-  { label: "Exhibits", href: "/exhibits" },
+  { label: "Community Projects", href: "/exhibits" },
   { label: "Research Affiliates", href: "/affiliates" },
   { label: "Join Us", href: "/climatebase-fellows-start-here", disabled: true },
   { label: "Support", href: "/support", disabled: true },

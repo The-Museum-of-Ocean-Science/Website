@@ -99,11 +99,11 @@ const faqQuestions: FaqQuestion[] = [
     question: "What kinds of projects can I work on?",
     expandable: {
       intro:
-        "As a Research Affiliate, you have the option to work on an Exhibit or a Research Question.",
+        "As a Research Affiliate, you have the option to work on a Community Project or a Research Question.",
       benefits: [
         {
           label:
-            "Exhibits focus on translating ocean science into visual, interactive, and accessible experiences.",
+            "Community Projects focus on translating ocean science into visual, interactive, and accessible experiences.",
         },
         {
           label:
@@ -112,7 +112,7 @@ const faqQuestions: FaqQuestion[] = [
       ],
       resourcesIntro: "You can find a more comprehensive description of the standards here:",
       resources: [
-        { label: "Exhibit Standards", href: "/exhibits/exhibit-standards" },
+        { label: "Community Project Standards", href: "/exhibits/exhibit-standards" },
         { label: "Research Standards", href: "/research/research-project-standards" },
       ],
     },

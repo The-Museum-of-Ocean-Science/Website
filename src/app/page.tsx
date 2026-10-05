@@ -209,7 +209,7 @@ export default function HomePage() {
                   TURN YOUR OCEAN RESEARCH INTO A
                 </span>
                 <span className="font-display mt-0.5 block text-base tracking-[0.08em] text-[color:var(--mos-seafoam)] sm:text-lg">
-                  Public Exhibit
+                  Public Community Project
                 </span>
               </Link>
             </div>
@@ -377,7 +377,7 @@ export default function HomePage() {
             </p>
             <h3 className="mt-4 text-3xl text-white sm:text-4xl">Collaborate with MOS</h3>
             <p className="mt-6 text-lg text-white/70">
-              Join as an affiliate or partner on open research and exhibit initiatives. Your
+              Join as an affiliate or partner on open research and community project initiatives. Your
               contributions will be documented, credited, and impactful.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">

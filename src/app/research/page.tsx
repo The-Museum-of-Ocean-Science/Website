@@ -5,7 +5,7 @@ import ResearchGrid from "./research-grid";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Research",
-  description: "Open research, contract work, and exhibits from MOS.",
+  description: "Open research, contract work, and community projects from MOS.",
   path: "/research",
 });
 
@@ -18,7 +18,7 @@ export default function ResearchPage() {
           <h1 className="mt-4 text-4xl">Open Research Portfolio</h1>
           <p className="mt-4 max-w-2xl text-white/70">
             Modular, transparent research projects spanning open science, client partnerships,
-            and public exhibits.
+            and public community projects.
           </p>
         </div>
       </section>

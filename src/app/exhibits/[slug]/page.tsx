@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 import { exhibits } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/seo";
@@ -35,6 +35,7 @@ export default async function ExhibitDetail({
   const { slug } = await params;
   const exhibit = exhibits.find((item) => item.slug === slug);
   if (!exhibit) notFound();
+  if (exhibit.externalUrl) redirect(exhibit.externalUrl);
 
   return (
     <div className="bg-black text-white">
