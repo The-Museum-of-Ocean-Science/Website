@@ -295,9 +295,9 @@ export const exhibits: Exhibit[] = [
 
 export const navigation = [
   { label: "Home", href: "/" },
-  { label: "Research", href: "/research" },
-  { label: "Community Projects", href: "/exhibits" },
+  { label: "Community Projects", href: "/communityprojects" },
   { label: "Research Affiliates", href: "/affiliates" },
+  { label: "Research", href: "/research", disabled: true },
   { label: "Join Us", href: "/climatebase-fellows-start-here", disabled: true },
   { label: "Support", href: "/support", disabled: true },
   { label: "Contact", href: "/contact", disabled: true },

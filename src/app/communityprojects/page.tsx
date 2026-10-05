@@ -8,7 +8,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildPageMetadata({
   title: "Community Projects",
   description: "Art-meets-science community projects and data installations.",
-  path: "/exhibits",
+  path: "/communityprojects",
 });
 
 export default function ExhibitsPage() {
@@ -31,7 +31,7 @@ export default function ExhibitsPage() {
             {exhibits.map((exhibit) => (
               <Link
                 key={exhibit.slug}
-                href={exhibit.externalUrl ?? `/exhibits/${exhibit.slug}`}
+                href={exhibit.externalUrl ?? `/communityprojects/${exhibit.slug}`}
                 target={exhibit.externalUrl ? "_blank" : undefined}
                 rel={exhibit.externalUrl ? "noopener noreferrer" : undefined}
                 className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition hover:border-white/25"

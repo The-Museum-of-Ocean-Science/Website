@@ -112,7 +112,7 @@ const faqQuestions: FaqQuestion[] = [
       ],
       resourcesIntro: "You can find a more comprehensive description of the standards here:",
       resources: [
-        { label: "Community Project Standards", href: "/exhibits/exhibit-standards" },
+        { label: "Community Project Standards", href: "/communityprojects/exhibit-standards" },
         { label: "Research Standards", href: "/research/research-project-standards" },
       ],
     },

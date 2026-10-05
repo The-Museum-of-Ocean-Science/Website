@@ -21,7 +21,7 @@ export async function generateMetadata({
   return buildPageMetadata({
     title: exhibit.title,
     description: exhibit.description,
-    path: `/exhibits/${exhibit.slug}`,
+    path: `/communityprojects/${exhibit.slug}`,
     image: exhibit.visualAssets[0],
     type: "article",
   });
